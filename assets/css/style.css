@@ -1,3 +1,9 @@
+#termsAndConditions{
+  border: none;
+  background-color: inherit;
+  color: blue;
+  display: inline-block;
+}
 #preload {
   width: 100vw;
   height: 100vh;
@@ -57,4 +63,3 @@
   from{opacity: 1;}
   to{opacity: 0;}
 }
-
