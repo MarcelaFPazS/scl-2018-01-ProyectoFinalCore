@@ -4,6 +4,31 @@ setTimeout(() => {
   preload.style.display = 'none';
 }, 3000);
 
+// Set the configuration for your app
+// TODO: Replace with your project's config object
+var config = {
+  apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
+  authDomain: "proyecto-final-6656c.firebaseapp.com",
+  databaseURL: "https://proyecto-final-6656c.firebaseio.com",
+  projectId: "proyecto-final-6656c",
+  storageBucket: "proyecto-final-6656c.appspot.com",
+  messagingSenderId: "701488365879"
+};
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+var database = firebase.database();
+
+function writeUserData(userId, name, email, imageUrl) {
+  const nombreVisita = document.getElementById('validationCustom01').value;
+  firebase.database().ref('users/' + userId).set({
+    username: nombreVisita,
+    email: email,
+    profile_picture : imageUrl
+  });
+}
+
+/*
 firebase.initializeApp({
   apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
   authDomain: "proyecto-final-6656c.firebaseapp.com",
@@ -47,4 +72,4 @@ function guardar(){
     console.error("Error adding document: ", error);
   });
 };
-
+*/
