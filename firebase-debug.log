@@ -1,0 +1,73 @@
+[debug] [2018-07-30T13:34:06.866Z] ----------------------------------------------------------------------
+[debug] [2018-07-30T13:34:06.868Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-07-30T13:34:06.868Z] CLI Version:   4.0.0
+[debug] [2018-07-30T13:34:06.868Z] Platform:      darwin
+[debug] [2018-07-30T13:34:06.868Z] Node Version:  v8.11.2
+[debug] [2018-07-30T13:34:06.869Z] Time:          Mon Jul 30 2018 09:34:06 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:06.869Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-30T13:34:06.879Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-30T13:34:06.879Z] > authorizing via signed-in user
+[debug] [2018-07-30T13:34:06.881Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-30T13:34:06.881Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/ZpzfHYCBO9If72bytpyb_HN-aRrIM3bFJn80mV1WJWg',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Jul 30 2018 09:34:06 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:08.782Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-30T13:34:08.801Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/proyecto-final-6656c  
+  
+ Mon Jul 30 2018 09:34:08 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:19.348Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-30T13:34:19.350Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/proyecto-final-6656c/tokens  
+  
+ Mon Jul 30 2018 09:34:19 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:20.005Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'proyecto-final-6656c'...
+[info] 
+[info] i  deploying firestore, hosting
+[info] i  firestore: checking Firestore Security Rules allow you to define how and when to allow for compilation errors...
+[debug] [2018-07-30T13:34:21.310Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/proyecto-final-6656c:test  
+ { source: { files: [ [Object] ] } } 
+ Mon Jul 30 2018 09:34:21 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:28.499Z] <<< HTTP RESPONSE 200
+[info] ✔  firestore: rules file Firestore Security Rules allow you to define how and when to allow compiled successfully
+[info] i  firestore: uploading rules Firestore Security Rules allow you to define how and when to allow...
+[debug] [2018-07-30T13:34:28.505Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/proyecto-final-6656c/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Mon Jul 30 2018 09:34:28 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:28.506Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta1/projects/proyecto-final-6656c/databases/(default)/indexes  
+  
+ Mon Jul 30 2018 09:34:28 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:30.008Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-30T13:34:30.008Z] [rules] created ruleset projects/proyecto-final-6656c/rulesets/0df4a7e9-4766-4d2d-ba2d-6eb378e7aa70
+[debug] [2018-07-30T13:34:30.051Z] <<< HTTP RESPONSE 200
+[info] i  hosting: preparing public directory for upload...
+[debug] [2018-07-30T13:34:30.093Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/proyecto-final-6656c/uploads/-LIfOQG1JiYosVdB1cT9?fileCount=6&message=  
+  
+ Mon Jul 30 2018 09:34:30 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:41.008Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-30T13:34:41.008Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 6 files uploaded successfully
+[debug] [2018-07-30T13:34:41.769Z] [hosting] deploy completed after 11717ms
+[debug] [2018-07-30T13:34:42.701Z] [rules] releasing cloud.firestore with ruleset projects/proyecto-final-6656c/rulesets/0df4a7e9-4766-4d2d-ba2d-6eb378e7aa70
+[debug] [2018-07-30T13:34:42.702Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/proyecto-final-6656c/releases/cloud.firestore  
+ { release: 
+   { name: 'projects/proyecto-final-6656c/releases/cloud.firestore',
+     rulesetName: 'projects/proyecto-final-6656c/rulesets/0df4a7e9-4766-4d2d-ba2d-6eb378e7aa70' } } 
+ Mon Jul 30 2018 09:34:42 GMT-0400 (-04)
+[debug] [2018-07-30T13:34:43.987Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-30T13:34:43.988Z] [rules] updated release projects/proyecto-final-6656c/releases/cloud.firestore
+[info] ✔  firestore: released rules Firestore Security Rules allow you to define how and when to allow to cloud.firestore
+[debug] [2018-07-30T13:34:43.989Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/proyecto-final-6656c/releases  
+ { hosting: 
+   { public: 'public',
+     ignore: [ 'firebase.json', '**/.*', '**/node_modules/**' ],
+     rewrites: [ [Object] ],
+     version: '-LIfOQG1JiYosVdB1cT9',
+     prefix: '-LIfOQG1JiYosVdB1cT9/',
+     manifest: [] } } 
+ Mon Jul 30 2018 09:34:43 GMT-0400 (-04)

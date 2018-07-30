@@ -4,6 +4,21 @@
   color: blue;
   display: inline-block;
 }
+<<<<<<< HEAD
+.btnCenter{
+  background-color: #F3BF05;
+  border: inherit;
+  border-radius: 2%;
+  float: right;
+}
+#registroPage{
+  margin: 20%;
+  background-color: #E6E6E6;
+}
+body{
+  background-color: #E6E6E6;
+}
+=======
 #preload {
   width: 100vw;
   height: 100vh;
@@ -69,3 +84,4 @@
   from{opacity: 1;}
   to{opacity: 0;}
 }
+>>>>>>> 1cfb99a8ba73cb4c347cd926e94e9eaf75d7724a
