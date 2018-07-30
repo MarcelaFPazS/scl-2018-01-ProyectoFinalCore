@@ -15,11 +15,7 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 
-<<<<<<< HEAD:assets/js/app.js
 function guardar() {
-=======
-function guardar(){
->>>>>>> upstream/master:public/assets/js/app.js
   const nombreVisita = document.getElementById('validationCustom01').value;
   document.getElementById('validationCustom01').value = '';
   const apellidoVisita = document.getElementById('validationCustom02').value;
