@@ -4,7 +4,6 @@
   color: blue;
   display: inline-block;
 }
-<<<<<<< HEAD
 .btnCenter{
   background-color: #F3BF05;
   border: inherit;
@@ -18,7 +17,6 @@
 body{
   background-color: #E6E6E6;
 }
-=======
 #preload {
   width: 100vw;
   height: 100vh;
@@ -73,14 +71,15 @@ body{
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
 }
-
-@keyframes anticlockwisespin {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(-360deg);}
+h4{
+  display: inline-block;
 }
-
-@keyframes fadeout {
-  from{opacity: 1;}
-  to{opacity: 0;}
+#icon{
+  background-color: #F3BF05;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
->>>>>>> 1cfb99a8ba73cb4c347cd926e94e9eaf75d7724a
+#respuestaPage{
+  margin: 10%;
+}
