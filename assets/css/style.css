@@ -9,6 +9,8 @@
   border: inherit;
   border-radius: 2%;
   float: right;
+  display: block;
+  margin: 10%;
 }
 #registroPage{
   margin: 20%;
@@ -38,4 +40,36 @@ h4{
 }
 #respuestaPage{
   margin: 10%;
+}
+#registroPage{
+  display: none;
+}
+#respuestaPage{
+  display: none;
+}
+#adminPage{
+  text-align: center;
+  margin: 20%;
+}
+h4{
+  margin-left: 30%;
+}
+#center{
+  margin-left: 30%;
+  margin-bottom: 20%;
+}
+.btnVolver{
+  background-color: #F3BF05;
+  border: inherit;
+  border-radius: 2%;
+  float: right;
+  display: block;
+  margin: 10%;
+}
+#backToInit{
+  float: left;
+}
+
+#tablePage{
+  display: none;
 }
