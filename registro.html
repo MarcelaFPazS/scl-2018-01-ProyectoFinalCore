@@ -56,7 +56,7 @@
         </div>
         <div class="col-md-3 mb-3">
             <label for="validationCustom03">Patente</label>
-            <input type="text" class="form-control" id="validationCustom03" placeholder="Ingresa acá tu RUT">
+            <input type="text" class="form-control" id="validationCustom04" placeholder="Ingresa acá tu RUT">
           </div>
         <div class="col-md-3 mb-3">
           <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
@@ -69,7 +69,7 @@
           </select>
         </div>
         <div class="col-md-3 mb-3">
-          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
             <option value="0">Selecciona el espacio a visitar</option>
             <option value="1">Aguas Lab</option>
             <option value="2">Café altura</option>
@@ -133,6 +133,20 @@
   <script src="assets/js/app.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/registro.js"></script>
+  <!-- link firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
+    authDomain: "proyecto-final-6656c.firebaseapp.com",
+    databaseURL: "https://proyecto-final-6656c.firebaseio.com",
+    projectId: "proyecto-final-6656c",
+    storageBucket: "proyecto-final-6656c.appspot.com",
+    messagingSenderId: "701488365879"
+  };
+  firebase.initializeApp(config);
+  </script>
 </body>
 
 </html>
