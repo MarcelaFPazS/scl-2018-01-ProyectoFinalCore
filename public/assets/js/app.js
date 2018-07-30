@@ -30,9 +30,6 @@ function guardar(){
   document.getElementById('inlineFormCustomSelectPref').value = '';
   const espacioVisita = document.getElementById('inlineFormCustomSelectPref2').value;
   document.getElementById('inlineFormCustomSelectPref2').value = '';
-  let d = new Date();
-  let time = d.getHours() + ":" + d.getMinutes();
-  let date = d.getDate() + "." + d.getMonth() + "." + d.getFullYear();
 
 
   db.collection("registro").add({  
@@ -43,8 +40,7 @@ function guardar(){
     patente: patenteVisita,
     motivo: motivoVisita,
     espacio: espacioVisita,
-    date: date,
-    time: time
+
   })
   .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);

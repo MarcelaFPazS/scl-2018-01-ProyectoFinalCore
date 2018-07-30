@@ -26,25 +26,12 @@
   <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
   <!-- initialize the SDK after all desired features are loaded -->
   <script defer src="/__/firebase/init.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-  <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
-    authDomain: "proyecto-final-6656c.firebaseapp.com",
-    databaseURL: "https://proyecto-final-6656c.firebaseio.com",
-    projectId: "proyecto-final-6656c",
-    storageBucket: "proyecto-final-6656c.appspot.com",
-    messagingSenderId: "701488365879"
-  };
-  firebase.initializeApp(config);
-  </script>
 </head>
 
 <body>
   
   <section id="preload" class="screen">
-    <img  id ="imglogo"src="img002.png"  alt=" logo">
+    <img  id ="imglogo"src="assets/ux/img/img002.png"  alt=" logo">
     <p></p>
     <div class="loader-container">
       <div id="loader1" class="loader1"></div>
@@ -57,6 +44,7 @@
   <section id="registroPage">
 
     <form class="needs-validation" novalidate>
+      <div class="form-row">
         <div class="col-md-12">
           <label for="validationCustom01">Nombre</label>
           <input type="text" class="form-control" id="validationCustom01" placeholder="Ingresa acá tu nombre" required>
@@ -74,13 +62,14 @@
             <input type="text" class="form-control" id="validationCustomUsername" placeholder="Ingresa acá tu e-mail" aria-describedby="inputGroupPrepend">
           </div>
         </div>
+      </div>
         <div class="col-md-12">
           <label for="validationCustom03">RUT</label>
           <input type="text" class="form-control" id="validationCustom03" placeholder="Ingresa acá tu RUT" required>
         </div>
         <div class="col-md-12">
             <label for="validationCustom03">Patente</label>
-            <input type="text" class="form-control" id="validationCustom04" placeholder="Ingresa acá la patente del vehículo">
+            <input type="text" class="form-control" id="validationCustom03" placeholder="Ingresa acá la patente del vehículo">
           </div>
         <div class="col-md-12">
           <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
@@ -94,7 +83,7 @@
         </div>
 
         <div class="col-md-12">
-          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
+          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
             <option value="0">Selecciona el espacio a visitar</option>
             <option value="1">Aguas Lab</option>
             <option value="2">Café altura</option>
@@ -112,6 +101,7 @@
             <option value="14">Wildproyectchile</option>
           </select>
         </div>
+
       <div class="form-group" >
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -145,7 +135,7 @@
         </div>
       </div>
       <div>
-      <button class="btnCenter" onclick="guardar()" type="submit">Enviar</button>
+      <button class="btnCenter" type="submit">Enviar</button>
     </div>
   </section>
   <!--Links Bootstrap-->
@@ -160,7 +150,19 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/registro.js"></script>
   <!-- link firebase -->
-  
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
+    authDomain: "proyecto-final-6656c.firebaseapp.com",
+    databaseURL: "https://proyecto-final-6656c.firebaseio.com",
+    projectId: "proyecto-final-6656c",
+    storageBucket: "proyecto-final-6656c.appspot.com",
+    messagingSenderId: "701488365879"
+  };
+  firebase.initializeApp(config);
+  </script>
 </body>
 
 </html>
