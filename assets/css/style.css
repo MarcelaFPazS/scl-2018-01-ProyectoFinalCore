@@ -22,11 +22,16 @@ body{
 #preload {
   width: 100vw;
   height: 100vh;
-  background: #333;
+  background: #F3BF05;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
+}
+#imglogo{
+  display: block;
+  margin: auto;
+  margin-top: 50%;
 }
 
 .loader-container {
@@ -54,8 +59,8 @@ body{
 .loader2 {
   width: 60px;
   height: 60px;
-  border-left: 5px solid darkturquoise;
-  border-right: 5px solid darkturquoise;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
   animation: anticlockwisespin 2s linear 3;
 }
 
