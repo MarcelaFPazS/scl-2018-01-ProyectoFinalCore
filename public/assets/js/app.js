@@ -24,6 +24,8 @@ function enviar(){
   document.getElementById('inlineFormCustomSelectPref').value = '';
   const espacioVisita = document.getElementById('inlineFormCustomSelectPref2').value;
   document.getElementById('inlineFormCustomSelectPref2').value = '';
+  const check = document.getElementById('iinvalidCheck');
+  document.getElementById('invalidCheck').value = '';
 
   db.collection("registro").add({  
     name: nombreVisita,
@@ -40,8 +42,47 @@ function enviar(){
   .catch(function(error) {
     console.error("Error adding document: ", error);
   });
-
 };
+
+//leer documentos
+let card = document.getElementById('cardPublicacion');
+db.collection("registro").onSnapshot((querySnapshot) => {
+  card.innerHTML = '';
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data().img}`);
+    card.innerHTML += `
+      <div class="card">
+        <img class="card-img-top" src="${doc.data().img}"text=Image cap" alt="Card image cap">
+        <h5 class="card-title">${doc.data().title}</h5>
+        <p class="card-text">${doc.data().text}</p>
+        <i class="fas fa-heart" id="hola" onclick="like()" ></i><span id="contador"></span>
+        <i class="fas fa-trash-alt" onclick="eliminar('${doc.id}')"></i>
+        <i class="fas fa-pencil-alt" onclick="editar('${doc.id}', '${doc.data().title}', '${doc.data().text}')"></i>
+        
+        <section class="center">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <textarea class="txt" id="comment" placeholder="Añade un comentario..."></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn" id="btncomentario" onclick="comentar()">
+                <i class="fas fa-plus" aria-hidden="true"></i> Comentar</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12" id="cont"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      `
+  });
+});
+
+
 
 const preload = document.getElementById('preload');
 setTimeout(() => {
