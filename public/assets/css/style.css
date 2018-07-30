@@ -1,0 +1,75 @@
+#termsAndConditions{
+  border: none;
+  background-color: inherit;
+  color: blue;
+  display: inline-block;
+}
+.btnCenter{
+  background-color: #F3BF05;
+  border: inherit;
+  border-radius: 2%;
+  float: right;
+  display: block;
+  margin: 10%;
+}
+#registroPage{
+  margin: 20%;
+  background-color: #E6E6E6;
+}
+body{
+  background-color: #E6E6E6;
+}
+#mapa{
+  width: 90%;
+  height: 20%;
+}
+#user{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  display: inline-block;
+}
+h4{
+  display: inline-block;
+}
+#icon{
+  background-color: #F3BF05;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+#respuestaPage{
+  margin: 10%;
+}
+#registroPage{
+  display: none;
+}
+#respuestaPage{
+  display: none;
+}
+#adminPage{
+  text-align: center;
+  margin: 20%;
+}
+h4{
+  margin-left: 30%;
+}
+#center{
+  margin-left: 30%;
+  margin-bottom: 20%;
+}
+.btnVolver{
+  background-color: #F3BF05;
+  border: inherit;
+  border-radius: 2%;
+  float: right;
+  display: block;
+  margin: 10%;
+}
+#backToInit{
+  float: left;
+}
+
+#tablePage{
+  display: none;
+}
