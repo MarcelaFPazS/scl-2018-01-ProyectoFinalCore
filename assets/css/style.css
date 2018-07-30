@@ -4,3 +4,16 @@
   color: blue;
   display: inline-block;
 }
+.btnCenter{
+  background-color: #F3BF05;
+  border: inherit;
+  border-radius: 2%;
+  float: right;
+}
+#registroPage{
+  margin: 20%;
+  background-color: #E6E6E6;
+}
+body{
+  background-color: #E6E6E6;
+}
