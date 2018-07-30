@@ -25,7 +25,7 @@ function enviar(){
   const espacioVisita = document.getElementById('inlineFormCustomSelectPref2').value;
   document.getElementById('inlineFormCustomSelectPref2').value = '';
 
-  db.collection("publicacion").add({  
+  db.collection("registro").add({  
     name: nombreVisita,
     lastName: apellidoVisita,
     email: emailVisita,
