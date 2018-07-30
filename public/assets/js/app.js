@@ -15,8 +15,7 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 
-function guardar()
-{
+function guardar(){
   const nombreVisita = document.getElementById('validationCustom01').value;
   document.getElementById('validationCustom01').value = '';
   const apellidoVisita = document.getElementById('validationCustom02').value;
@@ -48,3 +47,4 @@ function guardar()
     console.error("Error adding document: ", error);
   });
 };
+
