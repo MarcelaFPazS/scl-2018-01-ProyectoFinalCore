@@ -13,37 +13,29 @@
     crossorigin="anonymous">
   <!--Mi CSS-->
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Proyecto Final</title>
   <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
+    authDomain: "proyecto-final-6656c.firebaseapp.com",
+    databaseURL: "https://proyecto-final-6656c.firebaseio.com",
+    projectId: "proyecto-final-6656c",
+    storageBucket: "proyecto-final-6656c.appspot.com",
+    messagingSenderId: "701488365879"
+  };
+  firebase.initializeApp(config);
+  </script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-  <!-- update the version number as needed -->
-  <script defer src="/__/firebase/5.3.0/firebase-app.js"></script>
-  <!-- include only the Firebase features as you need -->
-  <script defer src="/__/firebase/5.3.0/firebase-auth.js"></script>
-  <script defer src="/__/firebase/5.3.0/firebase-database.js"></script>
-  <script defer src="/__/firebase/5.3.0/firebase-messaging.js"></script>
-  <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
-  <!-- initialize the SDK after all desired features are loaded -->
-  <script defer src="/__/firebase/init.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
-  authDomain: "proyecto-final-6656c.firebaseapp.com",
-  databaseURL: "https://proyecto-final-6656c.firebaseio.com",
-  projectId: "proyecto-final-6656c",
-  storageBucket: "proyecto-final-6656c.appspot.com",
-  messagingSenderId: "701488365879"
-    };
-    firebase.initializeApp(config);
-    </script>
+  <title>Proyecto Final</title>
 </head>
 
 <body>
   
   <section id="preload" class="screen">
-    <img  id ="imglogo"src="assets/ux/img/img002.png"  alt=" logo">
+    <img  id ="imglogo" src="img/img002.png"  alt=" logo">
     <p></p>
     <div class="loader-container">
       <div id="loader1" class="loader1"></div>
@@ -147,7 +139,7 @@
         </div>
       </div>
       <div>
-      <button class="btnCenter" onclick="guardar()" type="submit">Enviar</button>
+      <button class="btnCenter" onclick="enviar()" type="submit">Enviar</button>
     </div>
   </section>
   <!--Links Bootstrap-->
@@ -161,9 +153,6 @@
   <script src="assets/js/app.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/registro.js"></script>
-  <!-- link firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-
 </body>
 
 </html>
