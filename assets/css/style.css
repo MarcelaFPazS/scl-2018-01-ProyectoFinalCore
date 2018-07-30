@@ -18,9 +18,8 @@ body{
   background-color: #E6E6E6;
 }
 #mapa{
-  width: 100%;
+  width: 90%;
   height: 20%;
-  margin: 2%
 }
 #user{
   width: 200px;
@@ -38,6 +37,5 @@ h4{
   height: 200px;
 }
 #respuestaPage{
-  text-align: center;
   margin: 10%;
 }
