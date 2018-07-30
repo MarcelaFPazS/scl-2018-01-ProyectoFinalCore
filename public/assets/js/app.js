@@ -15,7 +15,8 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 
-function guardar(){
+function guardar()
+{
   const nombreVisita = document.getElementById('validationCustom01').value;
   document.getElementById('validationCustom01').value = '';
   const apellidoVisita = document.getElementById('validationCustom02').value;
@@ -31,7 +32,6 @@ function guardar(){
   const espacioVisita = document.getElementById('inlineFormCustomSelectPref2').value;
   document.getElementById('inlineFormCustomSelectPref2').value = '';
 
-
   db.collection("registro").add({  
     name: nombreVisita,
     lastName: apellidoVisita,
@@ -39,7 +39,7 @@ function guardar(){
     rut: rutVisita,
     patente: patenteVisita,
     motivo: motivoVisita,
-    espacio: espacioVisita,
+    espacio: espacioVisita
 
   })
   .then(function(docRef) {
@@ -48,5 +48,6 @@ function guardar(){
   .catch(function(error) {
     console.error("Error adding document: ", error);
   });
+
 };
 
