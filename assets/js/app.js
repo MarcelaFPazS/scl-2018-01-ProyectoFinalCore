@@ -13,20 +13,33 @@ firebase.initializeApp({
   messagingSenderId: "701488365879"
 });
 
-
 var db = firebase.firestore();
 
 function guardar()
 {
-  const titulopublicacion = document.getElementById('titulopublicacion').value;
-  document.getElementById('titulopublicacion').value = '';
-  const publicacion = document.getElementById('publicacion').value;
-  document.getElementById('publicacion').value = '';
+  const nombreVisita = document.getElementById('validationCustom01').value;
+  document.getElementById('validationCustom01').value = '';
+  const apellidoVisita = document.getElementById('validationCustom02').value;
+  document.getElementById('validationCustom02').value = '';
+  const emailVisita = document.getElementById('validationCustomUsername').value;
+  document.getElementById('validationCustomUsername').value = '';
+  const rutVisita = document.getElementById('validationCustom03').value;
+  document.getElementById('validationCustom03').value = '';
+  const patenteVisita = document.getElementById('validationCustom04').value;
+  document.getElementById('validationCustom04').value = '';
+  const motivoVisita = document.getElementById('inlineFormCustomSelectPref').value;
+  document.getElementById('inlineFormCustomSelectPref').value = '';
+  const espacioVisita = document.getElementById('inlineFormCustomSelectPref2').value;
+  document.getElementById('inlineFormCustomSelectPref2').value = '';
 
   db.collection("registro").add({  
-    title: titulopublicacion,
-    text: publicacion,
-    img: url,
+    name: nombreVisita,
+    lastName: apellidoVisita,
+    email: emailVisita,
+    rut: rutVisita,
+    patente: patenteVisita,
+    motivo: motivoVisita,
+    espacio: espacioVisita,
   })
   .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
