@@ -27,7 +27,7 @@ function enviar(){
   const check = document.getElementById('iinvalidCheck').value;
   document.getElementById('invalidCheck').value = '';
 
-  db.collection("registro").add({
+  db.collection("publicacion").add({
     name: nombreVisita,
     lastName: apellidoVisita,
     email: emailVisita,
@@ -46,11 +46,11 @@ function enviar(){
 
 //leer documentos
 let table = document.getElementById('tablaRegistro');
-db.collection("registro").onSnapshot((querySnapshot) => {
+db.collection("publicacion").onSnapshot((querySnapshot) => {
   table.innerHTML = '';
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().img}`);
-    card.innerHTML += `
+    table.innerHTML += `
         <tr>
           <td>${doc.data().name}</td>
           <td>${doc.data().lastName}</td>
