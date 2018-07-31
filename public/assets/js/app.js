@@ -1,8 +1,7 @@
 const preload = document.getElementById('preload');
 setTimeout(() => {
-  preload.style.animation = 'fadeout 1s ease';
   preload.style.display = 'none';
-}, 3000);
+}, 2000);
 
 firebase.initializeApp({
   apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
@@ -15,7 +14,7 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 
-function guardar(){
+function guardar() {
   const nombreVisita = document.getElementById('validationCustom01').value;
   document.getElementById('validationCustom01').value = '';
   const apellidoVisita = document.getElementById('validationCustom02').value;
@@ -31,7 +30,7 @@ function guardar(){
   const espacioVisita = document.getElementById('inlineFormCustomSelectPref2').value;
   document.getElementById('inlineFormCustomSelectPref2').value = '';
 
-  db.collection("registro").add({  
+  db.collection("registro").add({
     name: nombreVisita,
     lastName: apellidoVisita,
     email: emailVisita,
@@ -40,11 +39,11 @@ function guardar(){
     motivo: motivoVisita,
     espacio: espacioVisita,
   })
-  .then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-  })
-  .catch(function(error) {
-    console.error("Error adding document: ", error);
-  });
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
 };
 
