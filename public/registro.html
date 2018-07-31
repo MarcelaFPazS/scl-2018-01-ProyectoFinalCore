@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,14 +17,18 @@
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
   <!--Mi CSS-->
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Proyecto Final</title>
+  <title>Registrapp</title>
 </head>
-<body>
 
-  <section id="preload" class="screen">
-    <img id="imglogo" src="../assets/ux/img/img002.png" alt=" logo">
+<body>
+  <!--splash-->
+  <section id="preload" class="screen" class="container-fluid">
+    <div>
+      <img id="registrapp" src="../assets/img/logo.png" alt="Logo Registrapp">
+    </div>
+    <img id="imglogo" src="../assets/ux/img/img002.png" alt="logo de if blanco">
     <p></p>
-    <img id="gif" src="../assets/ux/img/git.gif" alt="" srcset="">
+    <img id="gif" src="../assets/ux/img/git.gif" alt="gif de carga" srcset="">
     <!--
     <div class="loader-container">
       <div id="loader1" class="loader1"></div>
@@ -144,6 +149,10 @@
           </div>
           <button onclick="showAdminPage()" id="backToInit" class="btnVolver" type="submit">Volver</button>
   </section>
+  <!--getUserMedia-->
+  <section>
+    <video id="video"></video>
+  </section>
   <!--Respuesta Page-->
   <section id="respuestaPage">
     <div id="center">
@@ -175,4 +184,5 @@
   <script src="../public/assets/js/app.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

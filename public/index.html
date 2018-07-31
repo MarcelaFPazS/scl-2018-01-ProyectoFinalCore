@@ -16,16 +16,16 @@
   <!-- firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
-    authDomain: "proyecto-final-6656c.firebaseapp.com",
-    databaseURL: "https://proyecto-final-6656c.firebaseio.com",
-    projectId: "proyecto-final-6656c",
-    storageBucket: "proyecto-final-6656c.appspot.com",
-    messagingSenderId: "701488365879"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
+      authDomain: "proyecto-final-6656c.firebaseapp.com",
+      databaseURL: "https://proyecto-final-6656c.firebaseio.com",
+      projectId: "proyecto-final-6656c",
+      storageBucket: "proyecto-final-6656c.appspot.com",
+      messagingSenderId: "701488365879"
+    };
+    firebase.initializeApp(config);
   </script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
@@ -33,114 +33,158 @@
 </head>
 
 <body>
-  
-  <section id="preload" class="screen">
-    <img  id ="imglogo" src="img/img002.png"  alt=" logo">
+  <!--splash-->
+  <section id="preload" class="screen" class="container-fluid">
+    <div>
+      <img id="registrapp" src="../assets/img/logo.png" alt="Logo Registrapp">
+    </div>
+    <img id="imglogo" src="../assets/ux/img/img002.png" alt="logo de if blanco">
     <p></p>
+    <img id="gif" src="../assets/ux/img/git.gif" alt="gif de carga" srcset="">
+    <!--
     <div class="loader-container">
       <div id="loader1" class="loader1"></div>
       <div id="loader2" class="loader2"></div>
     </div>
+     -->
   </section>
-
+  <!--Administrador-->
+  <section class="adminPage">
+    <div>
+      <button type="button" onclick="showVisitorPage()" class="btn">CONSERJERÍA</button>
+    </div>
+    <div>
+      <button type="button" onclick="showTablePage()" class="btn">ADMINISTRACIÓN</button>
+    </div>
+  </section>
   <!--Registro Page-->
 
   <section id="registroPage">
-
-    <form class="needs-validation" novalidate>
-      <div class="form-row">
-        <div class="col-md-12">
-          <label for="validationCustom01">Nombre</label>
-          <input type="text" class="form-control" id="validationCustom01" placeholder="Ingresa acá tu nombre" required>
-        </div>
-        <div class="col-md-12">
-          <label for="validationCustom02">Apellido</label>
-          <input type="text" class="form-control" id="validationCustom02" placeholder="Ingresa acá tu apellido" required>
-        </div>
-        <div class="col-md-12">
-          <label for="validationCustomUsername">Email</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupPrepend">@</span>
+    <div id="userInRegPage">
+      <h4>CONSERJERÍA</h4>
+      <div>
+        <br>
+        <form class="needs-validation" novalidate>
+          <div class="form-row">
+            <div class="col-md-12">
+              <label for="validationCustom01">Nombre</label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="Ingresa acá tu nombre">
             </div>
-            <input type="text" class="form-control" id="validationCustomUsername" placeholder="Ingresa acá tu e-mail" aria-describedby="inputGroupPrepend">
-          </div>
-        </div>
-      </div>
-        <div class="col-md-12">
-          <label for="validationCustom03">RUT</label>
-          <input type="text" class="form-control" id="validationCustom03" placeholder="Ingresa acá tu RUT" required>
-        </div>
-        <div class="col-md-12">
-            <label for="validationCustom03">Patente</label>
-            <input type="text" class="form-control" id="validationCustom04" placeholder="Ingresa acá la patente del vehículo">
-          </div>
-        <div class="col-md-12">
-          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-            <option value="0">Selecciona el motivo de visita</option>
-            <option value="1">Visitante Regular</option>
-            <option value="2">Encomienda</option>
-            <option value="3">Entrevista</option>
-            <option value="4">Reunión</option>
-            <option value="5">Otros </option>
-          </select>
-        </div>
-
-        <div class="col-md-12">
-          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
-            <option value="0">Selecciona el espacio a visitar</option>
-            <option value="1">Aguas Lab</option>
-            <option value="2">Café altura</option>
-            <option value="3">CDI</option>
-            <option value="4">Deseis</option>
-            <option value="5">Destileria Husares</option>
-            <option value="6">Elestudio</option>
-            <option value="7">Fábrica De Medios</option>
-            <option value="8">Fundación Mustakis</option>
-            <option value="9">Ilegal</option>
-            <option value="10">Laboratoria</option>
-            <option value="11">Mano de Chef</option>
-            <option value="12">Robotics Lab</option>
-            <option value="13">Tremenda</option>
-            <option value="14">Wildproyectchile</option>
-          </select>
-        </div>
-
-      <div class="form-group" >
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-          <label class="form-check-label" for="invalidCheck">
-            Estoy de acuerdo con los
-            <!-- Button trigger modal -->
-            <button type="button" id="termsAndConditions" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              términos y condiciones
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Términos y Condiciones</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">He leido los terminos</button>
-                  </div>
+            <div class="col-md-12">
+              <label for="validationCustom02">Apellido</label>
+              <input type="text" class="form-control" id="validationCustom02" placeholder="Ingresa acá tu apellido">
+            </div>
+            <div class="col-md-12">
+              <label for="validationCustomUsername">Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
                 </div>
+                <input type="text" class="form-control" id="validationCustomUsername" placeholder="Ingresa acá tu e-mail" aria-describedby="inputGroupPrepend">
               </div>
             </div>
-          </label>
-        </div>
-      </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12">
+              <label for="validationCustom03">RUT</label>
+              <input type="text" class="form-control" id="validationCustom03" placeholder="Ingresa acá tu RUT">
+            </div>
+            <div class="col-md-12">
+              <label for="validationCustom03">Patente</label>
+              <input type="text" class="form-control" id="validationCustom03" placeholder="Ingresa acá la patente del vehículo">
+            </div>
+            <div class="col-md-12">
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option value="0">Selecciona el motivo de visita</option>
+                <option value="1">Encomienda</option>
+                <option value="2">Entrevista</option>
+                <option value="4">Proveedores </option>
+                <option value="5">Reunión</option>
+                <option value="6">Visitante Regular</option>
+                <option value="3">Otros </option>
+              </select>
+            </div>
+            <div class="col-md-12">
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option value="0">Selecciona el espacio a visitar</option>
+                <option value="1">Aguas Lab</option>
+                <option value="2">Café altura</option>
+                <option value="3">CDI</option>
+                <option value="4">Deseis</option>
+                <option value="5">Destileria Husares</option>
+                <option value="6">Elestudio</option>
+                <option value="7">Fábrica De Medios</option>
+                <option value="8">Fundación Mustakis</option>
+                <option value="9">Ilegal</option>
+                <option value="10">Laboratoria</option>
+                <option value="11">Mano de Chef</option>
+                <option value="12">Robotics Lab</option>
+                <option value="13">Tremenda</option>
+                <option value="14">Wildproyectchile</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+              <label class="form-check-label" for="invalidCheck">
+                Estoy de acuerdo con los
+                <!-- Button trigger modal -->
+                <button type="button" id="termsAndConditions" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  términos y condiciones
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Términos y Condiciones</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">He leido los terminos</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div>
+            <button class="btnCenter" onclick="showResponsePage()" type="submit">Enviar</button>
+          </div>
+          <button onclick="showAdminPage()" id="backToInit" class="btnVolver" type="submit">Volver</button>
+  </section>
+  <!--getUserMedia-->
+  <section>
+    <video id="video"></video>
+  </section>
+  <!--Respuesta Page-->
+  <section id="respuestaPage">
+    <div id="center">
+      <p>TU SOLICITUD HA SIDO ACEPTADA</p>
       <div>
-      <button class="btnCenter" onclick="enviar()" type="submit">Enviar</button>
+        <img src="../assets/img/avion.png" alt="" srcset="" id="icon">
+      </div>
     </div>
+    <div>
+      <img src="../assets/img/MAPA_IFBLANCO2-1.png" id="mapa" alt="mapa de ubicacion if blanco">
+    </div>
+    <div>
+      <button onclick="showVisitorPage()" class="btnVolver" type="submit">Volver</button>
+    </div>
+  </section>
+  <section id="tablePage">
+    <div>
+      <button onclick="showAdminPage()" class="btnVolver" type="submit">Volver</button>
+    </div>
+  </section>
   </section>
   <!--Links Bootstrap-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -152,7 +196,6 @@
   <!--Links JS-->
   <script src="assets/js/app.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/registro.js"></script>
 </body>
 
 </html>
