@@ -1,9 +1,3 @@
-const preload = document.getElementById('preload');
-setTimeout(() => {
-  preload.style.animation = 'fadeout 1s ease';
-  preload.style.display = 'none';
-}, 3000);
-
 firebase.initializeApp({
   apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
   authDomain: "proyecto-final-6656c.firebaseapp.com",
@@ -15,7 +9,7 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 
-function guardar(){
+function enviar(){
   const nombreVisita = document.getElementById('validationCustom01').value;
   document.getElementById('validationCustom01').value = '';
   const apellidoVisita = document.getElementById('validationCustom02').value;
@@ -30,8 +24,10 @@ function guardar(){
   document.getElementById('inlineFormCustomSelectPref').value = '';
   const espacioVisita = document.getElementById('inlineFormCustomSelectPref2').value;
   document.getElementById('inlineFormCustomSelectPref2').value = '';
+  const check = document.getElementById('iinvalidCheck').value;
+  document.getElementById('invalidCheck').value = '';
 
-  db.collection("registro").add({  
+  db.collection("publicacion").add({
     name: nombreVisita,
     lastName: apellidoVisita,
     email: emailVisita,
@@ -40,11 +36,39 @@ function guardar(){
     motivo: motivoVisita,
     espacio: espacioVisita,
   })
-  .then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-  })
-  .catch(function(error) {
-    console.error("Error adding document: ", error);
-  });
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
 };
+
+//leer documentos
+let table = document.getElementById('tablaRegistro');
+db.collection("publicacion").onSnapshot((querySnapshot) => {
+  table.innerHTML = '';
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data().name}`);
+    table.innerHTML += `
+        <tr>
+          <td>${doc.data().name}</td>
+          <td>${doc.data().lastName}</td>
+          <td>${doc.data().email}</td>
+          <td>${doc.data().rut}</td>
+          <td>${doc.data().patente}</td>
+          <td>${doc.data().motivo}</td>
+          <td>${doc.data().espacio}</td>
+        </tr>
+      `
+  });
+});
+
+
+
+const preload = document.getElementById('preload');
+setTimeout(() => {
+  preload.style.animation = 'fadeout 1s ease';
+  preload.style.display = 'none';
+}, 3000);
 

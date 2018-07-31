@@ -1,65 +1,219 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.3.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.3.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Link icons page-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <!--Mi CSS-->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",
+      authDomain: "proyecto-final-6656c.firebaseapp.com",
+      databaseURL: "https://proyecto-final-6656c.firebaseio.com",
+      projectId: "proyecto-final-6656c",
+      storageBucket: "proyecto-final-6656c.appspot.com",
+      messagingSenderId: "701488365879"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <title>Proyecto Final</title>
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+  <!--splash-->
+  <section id="preload" class="screen" class="container-fluid">
+    <div>
+      <img id="registrapp" src="../assets/img/logo.png" alt="Logo Registrapp">
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <img id="imglogo" src="../assets/ux/img/img002.png" alt="logo de if blanco">
+    <p></p>
+    <img id="gif" src="../assets/ux/img/git.gif" alt="gif de carga" srcset="">
+    <!--
+    <div class="loader-container">
+      <div id="loader1" class="loader1"></div>
+      <div id="loader2" class="loader2"></div>
+    </div>
+     -->
+  </section>
+  <!--Administrador-->
+  <section class="adminPage">
+    <div>
+      <button type="button" onclick="showVisitorPage()" class="btn">CONSERJERÍA</button>
+    </div>
+    <div>
+      <button type="button" onclick="showTablePage()" class="btn">ADMINISTRACIÓN</button>
+    </div>
+  </section>
+  <!--Registro Page-->
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <section id="registroPage">
+    <div id="userInRegPage">
+      <h4>CONSERJERÍA</h4>
+      <div>
+        <br>
+        <form class="needs-validation" novalidate>
+          <div class="form-row">
+            <div class="col-md-12">
+              <label for="validationCustom01">Nombre</label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="Ingresa acá tu nombre">
+            </div>
+            <div class="col-md-12">
+              <label for="validationCustom02">Apellido</label>
+              <input type="text" class="form-control" id="validationCustom02" placeholder="Ingresa acá tu apellido">
+            </div>
+            <div class="col-md-12">
+              <label for="validationCustomUsername">Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                </div>
+                <input type="text" class="form-control" id="validationCustomUsername" placeholder="Ingresa acá tu e-mail" aria-describedby="inputGroupPrepend">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12">
+              <label for="validationCustom03">RUT</label>
+              <input type="text" class="form-control" id="validationCustom03" placeholder="Ingresa acá tu RUT">
+            </div>
+            <div class="col-md-12">
+              <label for="validationCustom03">Patente</label>
+              <input type="text" class="form-control" id="validationCustom03" placeholder="Ingresa acá la patente del vehículo">
+            </div>
+            <div class="col-md-12">
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option value="0">Selecciona el motivo de visita</option>
+                <option value="1">Encomienda</option>
+                <option value="2">Entrevista</option>
+                <option value="4">Proveedores </option>
+                <option value="5">Reunión</option>
+                <option value="6">Visitante Regular</option>
+                <option value="3">Otros </option>
+              </select>
+            </div>
+            <div class="col-md-12">
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option value="0">Selecciona el espacio a visitar</option>
+                <option value="1">Aguas Lab</option>
+                <option value="2">Café altura</option>
+                <option value="3">CDI</option>
+                <option value="4">Deseis</option>
+                <option value="5">Destileria Husares</option>
+                <option value="6">Elestudio</option>
+                <option value="7">Fábrica De Medios</option>
+                <option value="8">Fundación Mustakis</option>
+                <option value="9">Ilegal</option>
+                <option value="10">Laboratoria</option>
+                <option value="11">Mano de Chef</option>
+                <option value="12">Robotics Lab</option>
+                <option value="13">Tremenda</option>
+                <option value="14">Wildproyectchile</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+              <label class="form-check-label" for="invalidCheck">
+                Estoy de acuerdo con los
+                <!-- Button trigger modal -->
+                <button type="button" id="termsAndConditions" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  términos y condiciones
+                </button>
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Términos y Condiciones</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">He leido los terminos</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div>
+            <button class="btnCenter" onclick="showResponsePage()" type="submit">Enviar</button>
+          </div>
+          <button onclick="showAdminPage()" id="backToInit" class="btnVolver" type="submit">Volver</button>
+  </section>
+  <!--getUserMedia-->
+  <section>
+    <video id="video"></video>
+  </section>
+  <!--Respuesta Page-->
+  <section id="respuestaPage">
+    <div id="center">
+      <p>TU SOLICITUD HA SIDO ACEPTADA</p>
+      <div>
+        <img src="../assets/img/avion.png" alt="" srcset="" id="icon">
+      </div>
+    </div>
+    <div>
+      <img src="../assets/img/MAPA_IFBLANCO2-1.png" id="mapa" alt="mapa de ubicacion if blanco">
+    </div>
+    <div>
+      <button onclick="showVisitorPage()" class="btnVolver" type="submit">Volver</button>
+    </div>
+  </section>
+  <!-- pagina administrador -->
+  <section id="tablePage">
+    <div id="table" >
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rut</th>
+                <th scope="col">Patente</th>
+                <th scope="col">Motivo visita</th>
+                <th scope="col">Espacio a visitar</th>
+              </tr>
+            </thead>
+            <tbody id="tablaRegistro" >
+            </tbody>
+          </table>
+    </div>
+    <div>
+      <button onclick="showAdminPage()" class="btnVolver" type="submit">Volver</button>
+    </div>
+  </section>
+
+  <!--Links Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <!--Links JS-->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>

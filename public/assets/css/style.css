@@ -4,12 +4,13 @@
   color: blue;
   display: inline-block;
 }
-<<<<<<< HEAD
 .btnCenter{
   background-color: #F3BF05;
   border: inherit;
   border-radius: 2%;
   float: right;
+  display: block;
+  margin: 10%;
 }
 #registroPage{
   margin: 20%;
@@ -18,7 +19,11 @@
 body{
   background-color: #E6E6E6;
 }
-=======
+#registrapp{
+  width: 400px;
+  height: 200px;
+  margin-top: 20%;
+}
 #preload {
   width: 100vw;
   height: 100vh;
@@ -69,19 +74,80 @@ body{
   margin: 0%;
 }
 
+#mapa{
+  width: 90%;
+  height: 20%;
+}
+#user{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  display: inline-block;
+}
+h4{
+  display: inline-block;
+}
+#icon{
+  background-color: #F3BF05;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+#respuestaPage{
+  margin: 10%;
+  display: none;
+}
+#registroPage{
+  display: none;
+}
+.adminPage{
+  margin: 20%;
+  display: none;
+  display: block;
+}
+h4{
+  margin-left: 30%;
+}
+#preload{
+  background-color: #F3BF05;
+  text-align: center;
+}
+#gif{
+  width: 150px;
+  height: 150px;
+  margin-bottom: 40%;
+}
+#imglogo{
+  margin-top: 10%;
+  width: 200px;
+  height: 200px;
+}
+.btnVolver{
+  background-color: #F3BF05;
+  border: inherit;
+  border-radius: 2%;
+  float: right;
+  display: block;
+  margin: 10%;
+}
+#backToInit{
+  float: left;
+}
+
+<<<<<<< HEAD
+
+@keyframes anticlockwisespin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-360deg);}
+=======
+#tablePage{
+  display: none;
+  
+>>>>>>> upstream/master
+}
+
 @keyframes clockwisespin {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
 }
 
-
-@keyframes anticlockwisespin {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(-360deg);}
-}
-
-@keyframes fadeout {
-  from{opacity: 1;}
-  to{opacity: 0;}
-}
->>>>>>> 1cfb99a8ba73cb4c347cd926e94e9eaf75d7724a
