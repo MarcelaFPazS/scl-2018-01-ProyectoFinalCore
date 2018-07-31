@@ -24,7 +24,7 @@ function enviar(){
   document.getElementById('inlineFormCustomSelectPref').value = '';
   const espacioVisita = document.getElementById('inlineFormCustomSelectPref2').value;
   document.getElementById('inlineFormCustomSelectPref2').value = '';
-  const check = document.getElementById('iinvalidCheck');
+  const check = document.getElementById('iinvalidCheck').value;
   document.getElementById('invalidCheck').value = '';
 
   db.collection("registro").add({  
