@@ -19,7 +19,7 @@
 body{
   background-color: #E6E6E6;
 }
-#mapa{
+#mapa {
   width: 90%;
   height: 20%;
 }
@@ -42,9 +42,6 @@ h4{
   margin: 10%;
 }
 #registroPage{
-  display: none;
-}
-#respuestaPage{
   display: none;
 }
 .adminPage{
