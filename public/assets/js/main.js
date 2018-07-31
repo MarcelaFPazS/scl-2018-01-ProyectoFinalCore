@@ -4,6 +4,7 @@ function showVisitorPage() {
   $('#respuestaPage').hide();
   $('#registroPage').show();
   $('#adminPage').hide();
+  $('#tablePage').hide();
 }
 function showResponsePage() {
   console.log('2');

@@ -1,8 +1,7 @@
 const preload = document.getElementById('preload');
 setTimeout(() => {
-  preload.style.animation = 'fadeout 1s ease';
   preload.style.display = 'none';
-}, 3000);
+}, 2000);
 
 firebase.initializeApp({
   apiKey: "AIzaSyD9Mljc7zSuxCnR_6L15voA-5_0Olk0SBM",

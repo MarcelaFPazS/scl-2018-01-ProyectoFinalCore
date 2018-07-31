@@ -47,16 +47,27 @@ h4{
 #respuestaPage{
   display: none;
 }
-#adminPage{
-  text-align: center;
+.adminPage{
   margin: 20%;
+  display: none;
+  display: block;
 }
 h4{
   margin-left: 30%;
 }
-#center{
-  margin-left: 30%;
-  margin-bottom: 20%;
+#preload{
+  background-color: #F3BF05;
+  text-align: center;
+}
+#gif{
+  width: 150px;
+  height: 150px;
+  margin-bottom: 50%;
+}
+#imglogo{
+  margin-top: 50%;
+  width: 200px;
+  height: 200px;
 }
 .btnVolver{
   background-color: #F3BF05;
@@ -72,4 +83,5 @@ h4{
 
 #tablePage{
   display: none;
+  
 }
