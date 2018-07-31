@@ -49,7 +49,7 @@ let table = document.getElementById('tablaRegistro');
 db.collection("publicacion").onSnapshot((querySnapshot) => {
   table.innerHTML = '';
   querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data().img}`);
+    console.log(`${doc.id} => ${doc.data().name}`);
     table.innerHTML += `
         <tr>
           <td>${doc.data().name}</td>
