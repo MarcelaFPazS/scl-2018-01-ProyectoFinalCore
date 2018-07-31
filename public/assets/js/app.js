@@ -27,7 +27,7 @@ function enviar(){
   const check = document.getElementById('iinvalidCheck').value;
   document.getElementById('invalidCheck').value = '';
 
-  db.collection("registro").add({  
+  db.collection("registro").add({
     name: nombreVisita,
     lastName: apellidoVisita,
     email: emailVisita,
@@ -36,12 +36,12 @@ function enviar(){
     motivo: motivoVisita,
     espacio: espacioVisita,
   })
-  .then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-  })
-  .catch(function(error) {
-    console.error("Error adding document: ", error);
-  });
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
 };
 
 //leer documentos

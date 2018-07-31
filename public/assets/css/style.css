@@ -9,6 +9,8 @@
   border: inherit;
   border-radius: 2%;
   float: right;
+  display: block;
+  margin: 10%;
 }
 #registroPage{
   margin: 20%;
@@ -17,6 +19,7 @@
 body{
   background-color: #E6E6E6;
 }
+<<<<<<< HEAD
 #preload {
   width: 100vw;
   height: 100vh;
@@ -70,6 +73,17 @@ body{
 @keyframes clockwisespin {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
+=======
+#mapa{
+  width: 90%;
+  height: 20%;
+}
+#user{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  display: inline-block;
+>>>>>>> 1d88b2166d6cd7059fc0ec2762c7ebded121b8df
 }
 h4{
   display: inline-block;
@@ -82,4 +96,48 @@ h4{
 }
 #respuestaPage{
   margin: 10%;
+}
+#registroPage{
+  display: none;
+}
+#respuestaPage{
+  display: none;
+}
+.adminPage{
+  margin: 20%;
+  display: none;
+  display: block;
+}
+h4{
+  margin-left: 30%;
+}
+#preload{
+  background-color: #F3BF05;
+  text-align: center;
+}
+#gif{
+  width: 150px;
+  height: 150px;
+  margin-bottom: 50%;
+}
+#imglogo{
+  margin-top: 50%;
+  width: 200px;
+  height: 200px;
+}
+.btnVolver{
+  background-color: #F3BF05;
+  border: inherit;
+  border-radius: 2%;
+  float: right;
+  display: block;
+  margin: 10%;
+}
+#backToInit{
+  float: left;
+}
+
+#tablePage{
+  display: none;
+  
 }
